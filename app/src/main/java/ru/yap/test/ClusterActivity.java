@@ -1,10 +1,11 @@
 package ru.yap.test;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.widget.VideoView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ClusterActivity extends AppCompatActivity {
 
@@ -12,6 +13,11 @@ public class ClusterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cluster);
+
+        final VideoView videoView = findViewById(R.id.videoView);
+        videoView.setVideoPath("https://videocdn.bodybuilding.com/video/mp4/62000/62792m.mp4");
+        videoView.setOnCompletionListener(mediaPlayer -> videoView.start());
+        videoView.start();
     }
 
     @Override
