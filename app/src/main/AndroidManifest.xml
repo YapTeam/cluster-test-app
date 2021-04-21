@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:sharedUserId="android.uid.system"
+    package="ru.yap.test">
+
+    <uses-permission android:name="android.car.permission.CAR_DISPLAY_IN_CLUSTER"/>
+    <uses-permission android:name="android.car.permission.CAR_NAVIGATION_MANAGER"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Design.NoActionBar">
+
+        <activity android:name=".ClusterActivity"
+            android:allowEmbedded="true"
+            android:launchMode="singleInstance"
+            android:permission="android.car.permission.CAR_INSTRUMENT_CLUSTER_CONTROL"
+            android:resizeableActivity="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.car.cluster.NAVIGATION" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
