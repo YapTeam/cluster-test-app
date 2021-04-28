@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_500"
-    android:paddingBottom="54dp">
+    android:paddingBottom="50dp">
 
     <FrameLayout
         android:id="@+id/controls_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="356dp"
+        android:layout_marginLeft="310dp"
         android:layout_marginTop="4dp"
-        android:layout_marginRight="356dp"
+        android:layout_marginRight="310dp"
         android:layout_marginBottom="4dp"
         android:background="@color/black">
 
@@ -25,8 +25,8 @@
 
             <View
                 android:id="@+id/next_turn"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
+                android:layout_width="72dp"
+                android:layout_height="46dp"
                 android:background="@color/white"
                 android:layout_gravity="left|center"
                 />
@@ -44,7 +44,7 @@
         <View
             android:id="@+id/path"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="32dp"
             android:layout_gravity="bottom"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
