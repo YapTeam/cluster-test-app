@@ -1,25 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/map"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_500"
-    android:paddingLeft="180dp"
-    android:paddingTop="4dp"
-    android:paddingRight="180dp"
-    android:paddingBottom="30dp">
+    android:paddingBottom="54dp">
 
     <FrameLayout
-        android:id="@+id/content"
+        android:id="@+id/controls_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="356dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="356dp"
+        android:layout_marginBottom="4dp"
         android:background="@color/black">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Hello, World!"
-            android:textColor="@color/white" />
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
+
+            <View
+                android:id="@+id/next_turn"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:layout_gravity="left|center"
+                />
+
+            <View
+                android:id="@+id/speed"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circle"
+                android:layout_gravity="right|center"
+                />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/path"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"/>
+
     </FrameLayout>
 
 </FrameLayout>
