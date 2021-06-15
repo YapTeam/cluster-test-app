@@ -36,7 +36,7 @@ public class ClusterActivity extends AppCompatActivity {
         final Rect rect = rectBundle.getParcelable(CLUSTER_UNOBSCURED_RECT);
         if (rect == null) return;
 
-        container.setLayoutParams(new FrameLayout.LayoutParams(248, 256, Gravity.CENTER));
+        container.setLayoutParams(new FrameLayout.LayoutParams(rect.right - rect.left, rect.bottom - rect.top, Gravity.CENTER));
         container.setVisibility(View.VISIBLE);
     }
 }
