@@ -2,27 +2,41 @@ package ru.yap.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 public class ClusterActivity extends AppCompatActivity {
+
+    private static final String CLUSTER_ACTIVITY_STATE_KEY = "android.car.cluster.ClusterActivityState";
+    private static final String CLUSTER_UNOBSCURED_RECT = "android.car:InstrumentClusterService.unobscured.rect";
+
+    private ViewGroup container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cluster);
+
+        container = findViewById(R.id.controls_content);
+
+        applyUnobscuredRect();
     }
 
-    @Override
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
+    @SuppressWarnings("SpellCheckingInspection")
+    private void applyUnobscuredRect() {
+        final Bundle rectBundle = getIntent().getBundleExtra(CLUSTER_ACTIVITY_STATE_KEY);
+        if (rectBundle == null) return;
 
-        DisplayMetrics metrics = this.getResources().getDisplayMetrics();
-        int width = metrics.widthPixels;
-        int height = metrics.heightPixels;
+        final Rect rect = rectBundle.getParcelable(CLUSTER_UNOBSCURED_RECT);
+        if (rect == null) return;
 
-        Log.v("cluster_size", "width = " + getWindow().getDecorView().getWidth() + " height = " + getWindow().getDecorView().getHeight());
-        Log.v("cluster_size", "width = " + width + " height = " + height);
+        container.setLayoutParams(new FrameLayout.LayoutParams(248, 256, Gravity.CENTER));
+        container.setVisibility(View.VISIBLE);
     }
 }

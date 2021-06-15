@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cluster</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiZGltb3Jpbm55IiwiYSI6ImNrb2p6Y2cwbTBqNGgycHB2YTJ5ODMybmMifQ.645xkHVMVU7nY8rRLbLzWw</string>
 </resources>
