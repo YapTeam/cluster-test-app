@@ -24,6 +24,11 @@ public class ClusterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cluster);
 
         container = findViewById(R.id.controls_content);
+    }
+
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
 
         applyUnobscuredRect();
     }
@@ -36,7 +41,10 @@ public class ClusterActivity extends AppCompatActivity {
         final Rect rect = rectBundle.getParcelable(CLUSTER_UNOBSCURED_RECT);
         if (rect == null) return;
 
-        container.setLayoutParams(new FrameLayout.LayoutParams(rect.right - rect.left, rect.bottom - rect.top, Gravity.CENTER));
+        final FrameLayout.LayoutParams updatedParams = new FrameLayout.LayoutParams(rect.right - rect.left, rect.bottom - rect.top);
+        updatedParams.setMargins(rect.left, rect.top, 0, 0);
+
+        container.setLayoutParams(updatedParams);
         container.setVisibility(View.VISIBLE);
     }
 }
